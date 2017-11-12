@@ -1,10 +1,15 @@
 package fandueloptimizer;
-import java.util.*;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+
 import fandueloptimizer.Player.*;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FanduelOptimizer { 
 	//public static ArrayList importedPlayers = new ArrayList();
@@ -14,7 +19,7 @@ public class FanduelOptimizer {
 		//Player testplayer = new Player(0, true, "PG", 6, "Michael Macgillivray","Mustangs");
 		//importCSVFile();
 		//testplayer.printPlayer();
-		List<Player> printingPlayers = importCSVFile();
+		List<Player> printingPlayers = importCSVFile("fanduel.csv");
 
 		// let's print all the person read from CSV file
 		for (Player i : printingPlayers) {
@@ -30,8 +35,9 @@ public class FanduelOptimizer {
 		String team = playerData[9];
 		return new Player(id, injured, position, salary, name, team);
 	}
-	private static List<Player> importCSVFile(){
+	private static List<Player> importCSVFile(String fileName){
 		List<Player> importedPlayers = new ArrayList<>();
+		/*
 		System.out.println("What is the username?");
 		Scanner userScan = new Scanner(System.in);
 		String username = userScan.nextLine();
@@ -39,12 +45,12 @@ public class FanduelOptimizer {
 		Scanner pathScan = new Scanner(System.in);
 		String pathToFile = pathScan.nextLine();
 		String csvFile = "/Users/" + username + "/Desktop/" + pathToFile;
-		String line;
+		*/
+		Path pathToFile = Paths.get(fileName);
 		//begin with first player id = 0
 		int id = 0;
 		//gets rid of line 0
-		br.readLine();
-		try (BufferedReader br = Files.newBufferedReader(csvFile, StandardCharsets.US_ASCII)) {
+		try (BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
 			// read the first line from the text file
 			String line = br.readLine();
 			// loop until all lines are read
