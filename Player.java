@@ -1,12 +1,12 @@
 package fandueloptimizer;
 	
 public class Player {
-		int id;
-		boolean injured;
-		String position;
-		double salary;
-		String name;
-		String team;
+	private int id;
+	private boolean injured;
+	private String position;
+	private double salary;
+	private String name;
+	private String team;
 	
 	public Player(int id, boolean injured, String position, double salary, String name, String team){
 		this.id = id;
