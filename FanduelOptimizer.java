@@ -30,7 +30,7 @@ public class FanduelOptimizer {
 		int id = playerId;
 		boolean injured = Boolean.parseBoolean(playerData[11]);
 		String position = playerData[1];
-		double salary = Double.parseDouble(playerData[7]);
+		int salary = Integer.parseInt(playerData[7]);
 		String name = playerData[3];
 		String team = playerData[9];
 		return new Player(id, injured, position, salary, name, team);
