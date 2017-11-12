@@ -1,14 +1,14 @@
-package fandueloptimizer2;
+package fandueloptimizer;
 	
 public class Player {
-		public static int id;
-		public static boolean injured;
-		public static String position;
-		public static double salary;
-		public static String name;
-		public static String team;
+		int id;
+		boolean injured;
+		String position;
+		double salary;
+		String name;
+		String team;
 	
-	public void constructPlayer(int id, boolean injured, String position, double salary, String name, String team){
+	public Player(int id, boolean injured, String position, double salary, String name, String team){
 		this.id = id;
 		this.injured = injured;
 		this.position = position;
@@ -19,7 +19,7 @@ public class Player {
    
 	// Print "Player Card"
 	public void printPlayer(){
-		System.out.println("ID: "+ Player.id);
+		System.out.println("ID: "+ id);
 		System.out.println("Injured?: "+ injured);
 		System.out.println("Position: "+ position);
 		System.out.println("Salary: "+ salary);

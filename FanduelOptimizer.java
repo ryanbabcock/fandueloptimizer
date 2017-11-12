@@ -1,18 +1,17 @@
-package fandueloptimizer2;
+package fandueloptimizer;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import fandueloptimizer2.Player.*;
+import fandueloptimizer.Player.*;
 
-public class FanduelOptimizer2 { 
+public class FanduelOptimizer { 
 	//public static ArrayList importedPlayers = new ArrayList();
 	//ArrayList<Player> importedPlayers = new ArrayList<Player>();
 	public static void main(String[] args){
 		//create player object test
-		Player testplayer = new Player();
-		Player.constructPlayer(0, true, "PG", 6, "Michael Macgillivray","Mustangs");
+		Player testplayer = new Player(0, true, "PG", 6, "Michael Macgillivray","Mustangs");
 		/*
 		testPlayer.playerInjured(true);
 		testPlayer.playerPosition("PG");
