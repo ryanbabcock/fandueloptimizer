@@ -7,7 +7,7 @@
 
 _in progress_
 
-~~1)create player class to store csv data  ~~
+~~1) create player class to store csv data~~
 
 _2) parse csv into arraylist of players_
 
