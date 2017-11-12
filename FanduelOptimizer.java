@@ -37,11 +37,11 @@ public class FanduelOptimizer {
 			injured = true;
 		}
 //debug System.out.println(csvdata.get(1));
-		//String position = csvdata.get(1);
-		//int salary = Integer.parseInt(csvdata.get(7));
-		//String name = csvdata.get(3);
-		//String team = csvdata.get(9);
-		//return new Player(id, injured, position, salary, name, team);
+		String position = csvdata.get(1);
+		int salary = Integer.parseInt(csvdata.get(7));
+		String name = csvdata.get(3);
+		String team = csvdata.get(9);
+		return new Player(id, injured, position, salary, name, team);
 //debug return new Player(1,true,"test",66,"test","test");
 	}
 	private static List<Player> importCSVFile(String fileName){
