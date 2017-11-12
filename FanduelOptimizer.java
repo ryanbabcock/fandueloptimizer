@@ -14,14 +14,14 @@ public class FanduelOptimizer {
 		//Player testplayer = new Player(0, true, "PG", 6, "Michael Macgillivray","Mustangs");
 		//importCSVFile();
 		//testplayer.printPlayer();
-		List<printPlayers> printingPlayers = importCSVFile();
+		List<Player> printingPlayers = importCSVFile();
 
 		// let's print all the person read from CSV file
 		for (Player i : printingPlayers) {
 			System.out.println(i);
 		}
 	}
-	private static Player createPlayer(int id, String[] playerData){
+	private static Player createPlayer(int playerId, String[] playerData){
 		int id = playerId;
 		boolean injured = Boolean.parseBoolean(playerData[11]);
 		String position = playerData[1];
