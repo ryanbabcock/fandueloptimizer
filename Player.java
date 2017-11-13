@@ -4,11 +4,11 @@ public class Player {
 	private int id;
 	private boolean injured;
 	private String position;
-	private double salary;
+	private int salary;
 	private String name;
 	private String team;
 	
-	public Player(int id, boolean injured, String position, double salary, String name, String team){
+	public Player(int id, boolean injured, String position, int salary, String name, String team){
 		this.id = id;
 		this.injured = injured;
 		this.position = position;

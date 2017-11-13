@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 
 public class FanduelOptimizer {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException{
 		List<Player> printingPlayers = handleCSV("fanduel.csv");
 		// let's print all the person read from CSV file
 		for (Player i : printingPlayers) {
