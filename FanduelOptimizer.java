@@ -26,7 +26,7 @@ public class FanduelOptimizer {
 		if (Pattern.compile(Pattern.quote("O"), Pattern.CASE_INSENSITIVE).matcher(csvdata.get(11)).find() == true){
 			injured = true;
 		}
-		System.out.println(playerId+" "+csvdata.get(11)+" "+injured);
+//debug System.out.println(playerId+" "+csvdata.get(11)+" "+injured);
 		String position = csvdata.get(1);
 		int salary = Integer.parseInt(csvdata.get(7));
 		String name = csvdata.get(3);
@@ -48,14 +48,14 @@ public class FanduelOptimizer {
 				ArrayList<String> playerData = new ArrayList<>();
 				while(valueScanner.hasNext()){
 					String scannedValue = valueScanner.next();
-					//System.out.print("id"+valueId+" "+scannedValue);
+//debug System.out.print("id"+valueId+" "+scannedValue);
 					playerData.add(scannedValue);
-					//System.out.print(playerData);
+//debug System.out.print(playerData);
 					++valueId;
 				}
 				++playerId;
 				Player importedPlayer = createPlayer(playerId, playerData);
-				//importedPlayer.printPlayer();
+//debug importedPlayer.printPlayer();
 				importedPlayers.add(importedPlayer);
 			}
 			lineScanner.close();
