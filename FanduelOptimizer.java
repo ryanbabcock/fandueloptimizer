@@ -29,9 +29,10 @@ public class FanduelOptimizer {
 //debug System.out.println(playerId+" "+csvdata.get(11)+" "+injured);
 		String position = csvdata.get(1);
 		int salary = Integer.parseInt(csvdata.get(7));
+		double fgpg = Double.parseDouble(csvdata.get(5));
 		String name = csvdata.get(3);
 		String team = csvdata.get(9);
-		return new Player(id, injured, position, salary, name, team);
+		return new Player(id, injured, position, salary, fgpg, name, team);
 	}
 	private static List<Player> handleCSV()  throws FileNotFoundException{
 		List<Player> importedPlayers = new ArrayList<>();
@@ -53,10 +54,10 @@ public class FanduelOptimizer {
 //debug System.out.print(playerData);
 					++valueId;
 				}
-				++playerId;
 				Player importedPlayer = createPlayer(playerId, playerData);
 //debug importedPlayer.printPlayer();
 				importedPlayers.add(importedPlayer);
+				++playerId;
 			}
 			lineScanner.close();
 		return importedPlayers;	
