@@ -24,6 +24,6 @@ public class Player {
 		System.out.println("Position: "+ position);
 		System.out.println("Salary: "+ salary);
 		System.out.println("Name: "+ name);
-		System.out.println("Team: "+ team);
+		System.out.println("Team: "+ team + "\n");
 	}    
 }

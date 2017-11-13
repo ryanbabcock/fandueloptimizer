@@ -12,11 +12,12 @@ import java.util.Scanner;
 
 public class FanduelOptimizer {
 	public static void main(String[] args) throws FileNotFoundException{
-		List<Player> printingPlayers = handleCSV("fanduel.csv");
+		//List<Player> printingPlayers = handleCSV();
 		// let's print all the person read from CSV file
-		for (Player i : printingPlayers) {
-			System.out.println(i);
-		}
+		//for (Player i : printingPlayers) {
+		//	System.out.println(i);
+		//}
+		handleCSV();
 	}
 	private static Player createPlayer(int playerId, ArrayList<String> csvdata){
 		int id = playerId;
@@ -30,20 +31,32 @@ public class FanduelOptimizer {
 		String team = csvdata.get(9);
 		return new Player(id, injured, position, salary, name, team);
 	}
-	private static List<Player> handleCSV(String filename)  throws FileNotFoundException{
+	private static List<Player> handleCSV()  throws FileNotFoundException{
 		List<Player> importedPlayers = new ArrayList<>();
-		Scanner scanner = new Scanner(new File(filename));
-		scanner.useDelimiter(",");
-		int id = 0;
-		while(scanner.hasNext()){
-			ArrayList<String> playerData = new ArrayList<>();
-			playerData.add(scanner.next());
-			Player importedPlayer = createPlayer(id, playerData);
-			importedPlayers.add(importedPlayer);
-			++id;
-		}
-		scanner.close();
+		
+		Scanner lineScanner = new Scanner(new File("fanduel.csv"));
+		int playerId = 0;
+		
+		Scanner valueScanner = null;
+		int valueId = 0;
+		
+			while(lineScanner.hasNextLine()){
+				valueScanner = new Scanner(lineScanner.nextLine());
+				valueScanner.useDelimiter(",");
+				ArrayList<String> playerData = new ArrayList<>();
+				while(valueScanner.hasNext()){
+					String scannedValue = valueScanner.next();
+					//System.out.print("id"+valueId+" "+scannedValue);
+					playerData.add(scannedValue);
+					//System.out.print(playerData);
+					++valueId;
+				}
+				++playerId;
+				Player importedPlayer = createPlayer(playerId, playerData);
+				importedPlayer.printPlayer();
+				importedPlayers.add(importedPlayer);
+			}
+			lineScanner.close();
 		return importedPlayers;	
 	}
-
 }

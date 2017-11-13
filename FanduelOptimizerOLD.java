@@ -71,7 +71,7 @@ public class FanduelOptimizer {
 				//playerData.add(line.split(","));
 				playerData = line.split(",");
 //debug System.out.print(line + "\n\n\nffff");
-				//debug System.out.print(playerData);
+//debug System.out.print(playerData);
 				Player importedPlayer = createPlayer(id, playerData);
 				//createPlayer() takes an array list and id, Player() takes the values.
 				// adding imortedPlayer into ArrayList
