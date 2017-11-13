@@ -22,7 +22,7 @@ public class Player {
 		System.out.println("ID: "+ id);
 		System.out.println("Injured?: "+ injured);
 		System.out.println("Position: "+ position);
-		System.out.println("Salary: "+ salary);
+		System.out.println("Salary: $"+ salary);
 		System.out.println("Name: "+ name);
 		System.out.println("Team: "+ team + "\n");
 	}    

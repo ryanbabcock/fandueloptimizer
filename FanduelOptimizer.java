@@ -12,17 +12,17 @@ import java.util.Scanner;
 
 public class FanduelOptimizer {
 	public static void main(String[] args) throws FileNotFoundException{
-		//List<Player> printingPlayers = handleCSV();
+		List<Player> printingPlayers = handleCSV();
 		// let's print all the person read from CSV file
-		//for (Player i : printingPlayers) {
-		//	System.out.println(i);
-		//}
+		for (Player i : printingPlayers) {
+			i.printPlayer();
+		}
 		handleCSV();
 	}
 	private static Player createPlayer(int playerId, ArrayList<String> csvdata){
 		int id = playerId;
 		boolean injured = false;
-		if (csvdata.size() >= 11){
+		if (csvdata.get(11) == "O"){
 			injured = true;
 		}
 		String position = csvdata.get(1);
@@ -53,7 +53,7 @@ public class FanduelOptimizer {
 				}
 				++playerId;
 				Player importedPlayer = createPlayer(playerId, playerData);
-				importedPlayer.printPlayer();
+				//importedPlayer.printPlayer();
 				importedPlayers.add(importedPlayer);
 			}
 			lineScanner.close();
